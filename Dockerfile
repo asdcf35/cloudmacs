@@ -16,6 +16,8 @@ RUN apk --no-cache add git cmake make musl-dev gcc gettext-dev libintl \
 ### 
 
 
+RUN apk add --no-cache git make musl-dev go
+
 ### configure gotty
 # TODO extract in a separate image?
 # based on https://github.com/dit4c/dockerfile-gotty
