@@ -20,12 +20,7 @@ RUN apk --no-cache add git cmake make musl-dev gcc gettext-dev libintl \
 # TODO extract in a separate image?
 # based on https://github.com/dit4c/dockerfile-gotty
 # Unfortunately, it's got fixed alpine version and missing dependency so easiest was just to copy it
-RUN apk add --no-cache go git build-base && \
-  mkdir -p /tmp/gotty && \
-  GOPATH=/tmp/gotty go get github.com/yudai/gotty && \
-  mv /tmp/gotty/bin/gotty /usr/local/bin/ && \
-  apk del go git build-base && \
-  rm -rf /tmp/gotty
+RUN go get github.com/yudai/gotty
 # binary takes about 14 Mb
 ### 
 
